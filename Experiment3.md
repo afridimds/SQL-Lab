@@ -1,14 +1,14 @@
-# SQL Lab - Experiment 
+# SQL Lab - Experiment 3
 ## Aim: To perform SQL queries on Employee table for retrieving data by using ORDER BY, LIKE, IN, OR, IS NOT NULL.
 ## Question 1 : List all employees and jobs in Department 30 in descending order by salary.
 ### Query :
-~~~sql   
+```sql   
 SELECT ENAME,JOB,SAL 
     -> FROM EMPLOYEE  
     -> WHERE DEPTNO=30 ORDER BY SAL DESC ;
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 +--------+----------+------+
 | ENAME  | JOB      | SAL  |
 +--------+----------+------+
@@ -19,42 +19,42 @@ SELECT ENAME,JOB,SAL
 | MARTIN | SELESMAN | 1250 |
 | JAMES  | CLERK    |  950 |
 +--------+----------+------+
-~~~
+```
 ## Question 2 : List job and Department Number of employees whose name are five letters long begin with “A” and end with “N”.
 ### Query :
-~~~sql   
+```sql   
 SELECT ENAME,JOB,DEPTNO 
     ->FROM EMPLOYEE WHERE ENAME LIKE 'A___N' ;
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 +-------+----------+--------+
 | ENAME | JOB      | DEPTNO |
 +-------+----------+--------+
 | ALLEN | SELESMAN |     30 |
 +-------+----------+--------+
-~~~
+```
 ## Question 3 : Display the name of employees whose name start with alphabet S.
 ### Query :
-~~~sql   
+```sql   
 SELECT ENAME FROM EMPLOYEE WHERE ENAME LIKE 'S%' ;
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 +-------+
 | ENAME |
 +-------+
 | SMITH |
 | SCOTT |
 +-------+
-~~~
+```
 ## Question 4 : Display the names of employees whose name ends with alphabet S.
 ### Query :
-~~~sql   
+```sql   
 SELECT ENAME FROM EMPLOYEE WHERE ENAME LIKE '%S' ;
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 +-------+
 | ENAME |
 +-------+
@@ -62,16 +62,16 @@ SELECT ENAME FROM EMPLOYEE WHERE ENAME LIKE '%S' ;
 | ADAMS |
 | JAMES |
 +-------+
-~~~
+```
 ## Question 5 : Display the names of employees working in department number 10 or 20 or 40 or employees working as clerks,salesman or analyst.
 ### Query :
-~~~sql   
+```sql   
 SELECT ENAME,JOB,DEPTNO 
     ->FROM EMPLOYEE WHERE DEPTNO IN ('10','20','40') 
     ->OR JOB IN ('CLERK','SALESMAN','ANALYST');
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 +--------+-----------+--------+
 | ENAME  | JOB       | DEPTNO |
 +--------+-----------+--------+
@@ -85,15 +85,15 @@ SELECT ENAME,JOB,DEPTNO
 | FORD   | ANALYST   |     20 |
 | MILLER | CLERK     |     10 |
 +--------+-----------+--------+
-~~~
+```
 ## Question 6 : Display employee number and names for employees who earn commission.
 ### Query :
-~~~sql   
+```sql   
 SELECT EMPNO,ENAME FROM EMPLOYEE 
     -> WHERE COMM IS NOT NULL;
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 +-------+--------+
 | EMPNO | ENAME  |
 +-------+--------+
@@ -102,15 +102,15 @@ SELECT EMPNO,ENAME FROM EMPLOYEE
 |  7654 | MARTIN |
 |  7844 | TURNER |
 +-------+--------+
-~~~
+```
 ## Question 7 : Display employee number and total salary for each employee. 
 ### Query :
-~~~sql   
+```sql   
 SELECT EMPNO,(SAL+IFNULL(COMM,0)) AS TOTAL_SAL  
     -> FROM  EMPLOYEE;
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 +-------+-----------+
 | EMPNO | TOTAL_SAL |
 +-------+-----------+
@@ -129,14 +129,14 @@ SELECT EMPNO,(SAL+IFNULL(COMM,0)) AS TOTAL_SAL
 |  7902 |      3000 |
 |  7934 |      1300 |
 +-------+-----------+
-~~~
+```
 ## Question 8 : Display employee number and annual salary for each employee.
 ### Query :
-~~~sql   
+```sql   
 SELECT EMPNO,(SAL*12) AS ANNUAL_SAL FROM  EMPLOYEE;
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 +-------+------------+
 | EMPNO | ANNUAL_SAL |
 +-------+------------+
@@ -155,25 +155,26 @@ SELECT EMPNO,(SAL*12) AS ANNUAL_SAL FROM  EMPLOYEE;
 |  7902 |      36000 |
 |  7934 |      15600 |
 +-------+------------+
-~~~
+```
 ## Question 9 : Display the names of all employees working as clerks and drawing a salary more than 3,000.
 ### Query :
-~~~sql   
+```sql   
 SELECT ENAME,JOB,SAL FROM  EMPLOYEE
     -> WHERE JOB='CLERK' AND SAL >3000;
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 Empty set (0.003 sec)
-~~~
+```
 ## Question 10 : Display the names of employees who are working as clerk, salesman or analyst and drawing a salary more than 3,000.
 ### Query :
-~~~sql   
+```sql   
 SELECT ENAME,JOB,SAL FROM  EMPLOYEE 
     -> WHERE JOB IN ('CLERK','SALESMAN','ANALYST') 
     -> AND SAL >3000;
-~~~
+```
 ### Output :
-~~~SQL
+```SQL
 Empty set (0.001 sec)
-~~~
+
+```
