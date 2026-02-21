@@ -3,10 +3,8 @@
 ## Question 1 : Create Employee_master table with data using Employee table.
 ### Query : 
 ```sql   
-->CREATE TABLE EMPLOYEE_MASTER AS
-    SELECT*FROM EMPLOYEE;
-
-->SELECT*FROM EMPLOYEE_MASTER;
+CREATE TABLE EMPLOYEE_MASTER AS SELECT*FROM EMPLOYEE;
+SELECT*FROM EMPLOYEE_MASTER;
 ```
 ### Output : 
 ```sql
@@ -33,10 +31,8 @@
 ## Question 2 : Delete all record into Employee_master whose DeptNo is 10.
 ### Query :
 ```sql   
--> DELETE FROM EMPLOYEE_MASTER
-     WHERE DEPTNO=10;
-
-->SELECT*FROM EMPLOYEE_MASTER;
+DELETE FROM EMPLOYEE_MASTER WHERE DEPTNO=10;
+SELECT*FROM EMPLOYEE_MASTER;
 ```
 ### Output :
 ~~~SQL
@@ -62,11 +58,8 @@
 ## Question 3 : Update 10% in his salary of DEPTNO 20 into Employee_Master.
 ### Query :
 ~~~sql   
-->UPDATE EMPLOYEE_MASTER
-    -> SET SAL=SAL*1.10
-    -> WHERE DEPTNO=20;
-
-->SELECT*FROM EMPLOYEE_MASTER;
+UPDATE EMPLOYEE_MASTER SET SAL=SAL*1.10 WHERE DEPTNO=20;
+SELECT*FROM EMPLOYEE_MASTER;
 ~~~
 ### Output :
 ~~~SQL
@@ -92,10 +85,8 @@
 ## Question 4 : Alter SAL with size 10,2 in Employee_Master.
 ### Query :
 ~~~sql
--> ALTER TABLE EMPLOYEE_MASTER
-     MODIFY SAL DECIMAL(10,2);
-    
--> SELECT*FROM EMPLOYEE_MASTER;
+ALTER TABLE EMPLOYEE_MASTER MODIFY SAL DECIMAL(10,2);
+SELECT*FROM EMPLOYEE_MASTER;
 ~~~
 ### Output :
 ~~~sql
@@ -121,9 +112,10 @@
 ## Question 5 : Drop Employee_master Table.
 ### Query :
 ~~~sql
--> DROP TABLE EMPLOYEE_MASTER;
+DROP TABLE EMPLOYEE_MASTER;
 ~~~
 ### Output :
 ~~~sql
 Query OK, 0 rows affected (0.006 sec)
+
 ~~~
